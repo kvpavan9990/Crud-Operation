@@ -1,0 +1,32 @@
+<div class="col-6">
+    <div class="card">
+        <div class="card-header">Product Form</div>
+        <div class="card-body">
+        <form [formGroup]="productForm" autocomplete="off" (ngSubmit)="handleSubmit()">
+          <div class="form-group">
+            <input class="form-control" name="id" placeholder="id" (keyup)="onChange($event)"  formControlName="id" [value]="newId"/>
+          </div>
+      
+          <div class="form-group">
+            <input class="form-control" name="name" placeholder="name" formControlName="name"/>
+          </div>
+      
+          <div class="form-group">
+            <input class="form-control" name="price" placeholder="price" formControlName="price"/>
+          </div>
+      
+          <div class="form-group">
+            <textarea class="form-control" name="description" placeholder="description" formControlName="description">
+            </textarea>
+          </div>
+      
+          <div class="form-group text-center">
+            <button class="btn btn-primary btn-space" [disabled]="">{{btn}}</button>
+            <button class="btn btn-warning btn-space">Reset</button>
+            <button class="btn btn-danger btn-space">Cancel</button>
+          </div>
+        </form>
+      </div>
+
+
+</div>

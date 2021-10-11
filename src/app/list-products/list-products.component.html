@@ -1,0 +1,45 @@
+<div>
+
+    <div class="card">
+        <div class="card-header">Food Menu</div>
+        <div class="card-body">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Product ID</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Description</th>
+                        <th>Number Of Plates</th>
+                        <th *ngIf="dataShare.getUserType() == 'A'">Delete Item</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr *ngFor="let product of products">
+                        <td>
+                           {{product.id}}
+                        </td>
+                        
+                        <td>{{product.name}}</td>
+                        <td>{{product.price}}</td>
+                        <td>{{product.description}}</td>
+                        <td><select (change)="onChange($event,product.id)" name="items" id="foods">
+                            <option value=0>Select</option>
+                            <option value=1>1</option>
+                            <option value=2>2</option>
+                            <option value=3>3</option>
+                            <option value=4>4</option>
+                            <option value=5>5</option>
+                            <option value=6>6</option>
+                          </select></td>
+                        <td *ngIf="dataShare.getUserType() == 'A'"><button type="button" class="btn btn-primary" (click)="deleteItem(product)">Delete</button></td>
+                    </tr>
+                </tbody>
+
+            </table>
+            <button type="button" *ngIf="dataShare.getUserType()=='U'" class="btn btn-primary float-right col-2" (click)="onClick()">Add to cart</button>
+        </div>
+    </div>
+    
+</div>

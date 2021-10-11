@@ -1,0 +1,45 @@
+<div class="col-6">
+
+
+<div class="card">
+    <div class="card-header">Product Search Page</div>
+    <div class="card-body">
+        <form [formGroup]="searchForm" autocomplete="off" (ngSubmit)="handleSubmit()">
+
+            <div class="form-group">
+                <input placeholder="Product Id" class="form-control" formControlName="id" name="id"/>
+            </div>
+            
+            <div class="text-center">
+                <button class="btn btn-primary">Find</button>
+            </div>
+
+        </form>
+    </div>
+</div>
+<hr>
+<div *ngIf="product">
+    
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Product ID</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>{{product.id}}</td>
+                <td>{{product.name}}</td>
+                <td>{{product.price}}</td>
+                <td>{{product.description}}</td>
+            </tr>
+        </tbody>
+
+    </table>
+
+</div>
+</div>
